@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rachit Aryal — Software Architect</title>
+    <meta
+      name="description"
+      content="Rachit Aryal, software architect. Ten years of building software that has to hold together."
+    />
+    <meta name="theme-color" content="#f3f0ea" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <img
+      class="plate"
+      src="city.jpg"
+      alt="Fog over a dense city, the towers dissolving upward into white."
+    />
+    <div class="veil" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top">Rachit Aryal</a>
+      <a class="contact" href="#contact">Contact</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="statement">
+        <div class="hero-copy">
+          <h1 id="statement">
+            Ten years of building software that has to hold together.
+          </h1>
+          <p class="role">Software Architect</p>
+        </div>
+      </section>
+
+      <div class="sheet">
+        <section class="about" aria-label="Practice">
+          <p>
+            I design the shape of a system before it is built. How the parts
+            depend on each other. How data moves. What must stay true as the
+            product grows. A decade of taking unclear needs and turning them
+            into applications a team can build, run, and keep.
+          </p>
+        </section>
+
+        <section class="principles" aria-label="Principles">
+          <ol>
+            <li>
+              <span class="num">01</span>
+              <div>
+                <h2>See the whole system.</h2>
+                <p>
+                  A product is more than its screens. I start with the
+                  dependencies, the data, and the decisions that will still
+                  matter in five years.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="num">02</span>
+              <div>
+                <h2>Keep only the complexity the problem earns.</h2>
+                <p>
+                  Clear boundaries. A design no larger than the work it has to
+                  do.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="num">03</span>
+              <div>
+                <h2>Leave something others can trust.</h2>
+                <p>
+                  A system is finished when it can be changed without fear.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+      <section class="close" id="contact">
+        <p>If the problem is the system itself, start there.</p>
+        <a class="write" href="https://github.com/rachitaryal">github.com/rachitaryal</a>
+        <p class="credit">Photograph by Rafael de Nadai</p>
+      </section>
+    </main>
+
+    <script>
+      const header = document.querySelector(".site-header");
+      const close = document.querySelector(".close");
+
+      function placeHeader() {
+        header.classList.toggle(
+          "on-dark",
+          close.getBoundingClientRect().top <= header.offsetHeight
+        );
+      }
+
+      placeHeader();
+      document.addEventListener("scroll", placeHeader, { passive: true });
+    </script>
+  </body>
+</html>
