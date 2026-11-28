@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Designing for Autonomy: Software Architecture in the Age of Agents —
+      Rachit Aryal
+    </title>
+    <meta
+      name="description"
+      content="When code generation becomes cheap and fast, software architecture becomes the primary safeguard against sprawling, fragile systems."
+    />
+    <meta name="theme-color" content="#f3f0ea" />
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <img
+      class="plate plate--stairs"
+      src="stairs.jpg"
+      alt="A stone staircase curving down between granite walls."
+    />
+    <div class="veil veil--deep" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="../../">Rachit Aryal</a>
+      <nav class="nav" aria-label="Site">
+        <a href="../">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero hero--post" aria-labelledby="title" data-dark>
+        <div class="hero-copy">
+          <h1 id="title">
+            Designing for Autonomy: Software Architecture in the Age of Agents
+          </h1>
+          <p class="role">
+            <time datetime="2026-11-28">November 28, 2026</time>
+          </p>
+        </div>
+      </section>
+
+      <div class="sheet">
+        <article class="article">
+          <p class="lede">
+            Software development has shifted from writing isolated functions and
+            static request-response handlers to orchestrating autonomous and
+            semi-autonomous AI agents. Instead of merely suggesting code
+            snippets, modern agents plan multi-step tasks, invoke tools, read
+            repositories, run test suites, and iterate on failures.
+          </p>
+
+          <p>This shift changes where engineering effort goes:</p>
+          <ul>
+            <li>
+              <strong>From syntax to intent:</strong> Engineers spend less time
+              typing boilerplate and more time specifying goals, constraints,
+              and acceptance criteria.
+            </li>
+            <li>
+              <strong>From single turns to loops:</strong> Agentic workflows
+              operate in feedback loops—observing tool outputs, updating state,
+              and retrying—rather than executing linear scripts.
+            </li>
+            <li>
+              <strong>From deterministic to probabilistic:</strong> Model
+              outputs vary across runs, making repeatability, verification, and
+              guardrails central concerns rather than afterthoughts.
+            </li>
+          </ul>
+
+          <h2>Why Architecture Matters More Than Ever</h2>
+          <p>
+            When code generation becomes cheap and fast, software architecture
+            becomes the primary safeguard against sprawling, fragile systems.
+            Agents can produce hundreds of lines of working code in seconds, but
+            without clear boundaries they easily introduce tight coupling,
+            duplicated logic, or subtle security flaws.
+          </p>
+          <p>Key architectural priorities in an agent-driven world include:</p>
+          <ul>
+            <li>
+              <strong>Strict module boundaries:</strong> Clear interfaces,
+              contracts, and domain separations contain the blast radius when an
+              agent modifies code or triggers side effects.
+            </li>
+            <li>
+              <strong>Deterministic guardrails:</strong> Validation layers,
+              policy engines, sandboxes, and least-privilege permissions enforce
+              rules that probabilistic models cannot guarantee on their own.
+            </li>
+            <li>
+              <strong>Observability and auditability:</strong> Structured logs,
+              traces, and state snapshots let teams see what an agent did, why
+              it chose a path, and how to roll back bad changes.
+            </li>
+            <li>
+              <strong>Testability and fast feedback:</strong> Fast unit,
+              integration, and contract tests act as the ground truth that
+              guides an agent toward valid behavior.
+            </li>
+          </ul>
+
+          <h2>Designing Systems for Both Humans and Agents</h2>
+          <p>
+            Modern architecture must serve two kinds of builders: human
+            engineers who reason about long-term trade-offs, and agents that
+            navigate codebases and APIs programmatically.
+          </p>
+          <ul>
+            <li>
+              <strong>Explicit over implicit:</strong> Clear naming, typed
+              schemas, and predictable error messages reduce ambiguity for both
+              human readers and automated callers.
+            </li>
+            <li>
+              <strong>Composability and idempotency:</strong> Small,
+              well-documented tools and idempotent operations make retries safe
+              when network calls or model steps fail mid-flight.
+            </li>
+            <li>
+              <strong>Human-in-the-loop checkpoints:</strong> High-impact
+              actions—such as production deployments, schema migrations, or
+              external communications—belong behind explicit approval gates.
+            </li>
+          </ul>
+
+          <h2>The Architect's Evolving Role</h2>
+          <p>
+            Agents do not eliminate software architecture; they raise its
+            stakes. Writing code is increasingly a commodity, while deciding
+            what boundaries exist, where trust is placed, and how failure is
+            contained defines system quality. In a world of capable agents,
+            strong architecture is what turns rapid execution into reliable
+            software.
+          </p>
+        </article>
+      </div>
+
+      <section class="close" id="contact" data-dark>
+        <p>If the problem is the system itself, start there.</p>
+        <a class="write" href="https://www.linkedin.com/in/rachitaryal/">LinkedIn</a>
+      </section>
+    </main>
+
+    <script src="../../site.js"></script>
+  </body>
+</html>

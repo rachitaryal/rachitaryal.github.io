@@ -28,7 +28,10 @@
 
     <header class="site-header">
       <a class="brand" href="#top">Rachit Aryal</a>
-      <a class="contact" href="#contact">Contact</a>
+      <nav class="nav" aria-label="Site">
+        <a href="blog/">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
     <main id="top">
@@ -87,25 +90,12 @@
         </section>
       </div>
 
-      <section class="close" id="contact">
+      <section class="close" id="contact" data-dark>
         <p>If the problem is the system itself, start there.</p>
         <a class="write" href="https://www.linkedin.com/in/rachitaryal/">LinkedIn</a>
       </section>
     </main>
 
-    <script>
-      const header = document.querySelector(".site-header");
-      const close = document.querySelector(".close");
-
-      function placeHeader() {
-        header.classList.toggle(
-          "on-dark",
-          close.getBoundingClientRect().top <= header.offsetHeight
-        );
-      }
-
-      placeHeader();
-      document.addEventListener("scroll", placeHeader, { passive: true });
-    </script>
+    <script src="site.js"></script>
   </body>
 </html>
